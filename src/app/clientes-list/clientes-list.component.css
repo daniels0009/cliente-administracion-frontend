@@ -1,0 +1,173 @@
+.container {
+    padding: 20px;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .left-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilos para el icono de la cabecera */
+  .clients-icon {
+    width: 80px; /* Ajusta el tamaño del icono */
+    height: 40px;
+    margin-right: 10px; /* Añade algo de espacio entre el icono y el texto */
+    vertical-align: middle; /* Asegúrate de que el icono esté alineado con el texto */
+  }
+  
+  .clients-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .search-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .form-control {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+  }
+  
+  /* Modal para crear cliente */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Estilos para la tabla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  table td {
+    color: #333;
+  }
+  
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .advanced-search-container {
+    background-color: #d1e0ea; /* Fondo azul claro */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 400px; /* Ancho del contenedor */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+  .advanced-search-container h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }

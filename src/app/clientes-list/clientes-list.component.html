@@ -1,0 +1,97 @@
+<div class="container">
+  <h2>Lista de Clientes</h2>
+
+  <div class="header-container">
+    <div class="left-section">
+      <img src="https://www.alianza.com.co/documents/20124/328177/logo_alianza_footer.png/aa43d355-81f8-0485-7b19-1cb627df69bc?t=1613161734193" alt="Clients Icon" class="clients-icon">
+      <h2 class="clients-text">Clients</h2>
+    </div>
+
+    <div class="button-container">
+      <button class="btn btn-primary new-btn" (click)="abrirFormulario()">New</button>
+      <button class="btn btn-primary export-btn">Export</button>
+    </div>
+  </div>
+
+  <div class="search-container">
+    <input type="text" class="form-control search-input" placeholder="Enter shared key" [(ngModel)]="searchKey">
+    <button class="btn btn-primary search-btn" (click)="buscarCliente()">Search</button>
+    <button class="btn btn-primary advanced-search-btn" (click)="mostrarBusquedaAvanzada = !mostrarBusquedaAvanzada">Advanced Search</button>
+  </div>
+
+  <!-- Buscador avanzado -->
+  <div *ngIf="mostrarBusquedaAvanzada" class="advanced-search-container">
+    <h3>Búsqueda Avanzada</h3>
+    <div class="form-group">
+      <label for="sharedKey">Shared Key</label>
+      <input type="text" id="sharedKey" [(ngModel)]="busquedaAvanzada.sharedKey" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" [(ngModel)]="busquedaAvanzada.nombre" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono</label>
+      <input type="text" id="telefono" [(ngModel)]="busquedaAvanzada.telefono" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="busquedaAvanzada.email" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" [(ngModel)]="busquedaAvanzada.fecha" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" (click)="buscarAvanzado()">Buscar Avanzado</button>
+  </div>
+
+  <!-- Tabla de clientes -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Shared Key</th>
+        <th>Business ID</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Data Added</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{ cliente.sharedKey }}</td>
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.telefono }}</td>
+        <td>{{ cliente.fecha }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal para crear un nuevo cliente -->
+  <div class="modal" *ngIf="mostrarFormulario">
+    <div class="modal-content">
+      <span class="close" (click)="cerrarFormulario()">&times;</span>
+      <h2>Crear Nuevo Cliente</h2>
+      <form (ngSubmit)="onSubmit()">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" [(ngModel)]="cliente.nombre" name="nombre" required>
+
+        <label for="telefono">Teléfono</label>
+        <input type="text" id="telefono" [(ngModel)]="cliente.telefono" name="telefono" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="cliente.email" name="email" required>
+
+        <label for="fecha">Fecha de Creación</label>
+        <input type="date" id="fecha" [(ngModel)]="cliente.fecha" name="fecha" required>
+
+        <button type="submit">OK</button>
+      </form>
+    </div>
+  </div>
+</div>
